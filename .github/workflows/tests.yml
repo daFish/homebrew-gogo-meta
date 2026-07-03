@@ -36,7 +36,8 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - name: Lint and audit the cask (brew style + audit)
+      - name: Lint and audit the cask (pull requests only)
+        if: github.event_name == 'pull_request'
         run: brew test-bot --only-tap-syntax
 
       - name: Install and smoke-test the cask
