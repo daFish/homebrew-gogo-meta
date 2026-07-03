@@ -16,10 +16,10 @@ cask "gogo" do
     strategy :github_latest
   end
 
+  depends_on macos: :monterey
+
   binary "gogo"
 
-  # The released binaries are ad-hoc signed but not notarized, so macOS
-  # Gatekeeper terminates them on first run. Strip the quarantine flag.
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-dr", "com.apple.quarantine", "#{staged_path}/gogo"]
