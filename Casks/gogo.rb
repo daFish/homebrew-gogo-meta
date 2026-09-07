@@ -2,25 +2,25 @@
 cask "gogo" do
   depends_on macos: :monterey
 
-  version "3.0.1"
+  version "3.1.1"
 
   on_macos do
     on_arm do
-      sha256 "f60547fdcb80d3af074123f54764f6a16197246dfeea526b9796019ddaf85967"
+      sha256 "767888561c4ca133ae2ae4705a3019a4c2d0ca74b36d67aa47da6e6f9f9c7437"
       url "https://github.com/daFish/gogo-meta/releases/download/v#{version}/gogo_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
-      sha256 "b69088d94c7c820f3a327a62485d0ee6ae979e8c4dbe5899d6398ae3d817553f"
+      sha256 "6b1ff398557a94a0eabcb34c1caf41ed2dc2fe1e89bfb65d8a92cfb8a2bcc3b3"
       url "https://github.com/daFish/gogo-meta/releases/download/v#{version}/gogo_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
-      sha256 "e9ac5d7b8bf1a8332b5fd5041bb7fd73d62c49cc5d6d4530c82c610d6b2ea513"
+      sha256 "9c9866a7394d583b7f90ff6f1c66f477645e1550f13db682528d5c66431af056"
       url "https://github.com/daFish/gogo-meta/releases/download/v#{version}/gogo_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
-      sha256 "81f516972250308e41cb37056ddc17aea5a5bdd9d0ee55e647b236831e8cc4e0"
+      sha256 "99d983d66f517fd741cef07885d7155ad1f78bf2cc970ddeb47ce03432938d7b"
       url "https://github.com/daFish/gogo-meta/releases/download/v#{version}/gogo_#{version}_linux_amd64.tar.gz"
     end
   end
