@@ -2,6 +2,12 @@
 cask "gogo" do
   depends_on macos: :monterey
 
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "gogo"], chdir: "."
+    end
+  end
+
   version "3.1.1"
 
   on_macos do
@@ -34,10 +40,6 @@ cask "gogo" do
   end
 
   binary "gogo"
-
-  postflight do
-    system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/gogo"] if OS.mac?
-  end
 
   # No zap stanza required
 end
